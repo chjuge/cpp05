@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
-
+*bureaucrat
+.vscode
 # Compiled Object files
 *.slo
 *.lo
