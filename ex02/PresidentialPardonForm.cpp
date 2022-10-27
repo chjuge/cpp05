@@ -6,13 +6,13 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:37:15 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/23 12:36:31 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 12:31:54 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form()
+PresidentialPardonForm::PresidentialPardonForm() : Form("Presidential Pardon Form", 25, 5)
 {
 	std::cout << "Default constructor [PresidentialPardonForm] " << this->getName() << std::endl;
 }
@@ -30,4 +30,21 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & sr
 PresidentialPardonForm::PresidentialPardonForm(std::string & target) : Form("Presidential Pardon Form", 25, 5), target(target)
 {
 	std::cout << "Constructor [PresidentialPardonForm] " << this->getName() << std::endl;
+}
+
+PresidentialPardonForm & PresidentialPardonForm::operator =(PresidentialPardonForm const & src)
+{
+	return (*this);
+}
+
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
+{
+	if (!this->getIsSigned())
+		throw PresidentialPardonForm::FormUnsiged();
+	if (!isGradeInRange(executor.getGrade(),
+						  1,
+						  this->getReqExec()))
+		throw PresidentialPardonForm::GradeTooLowException();
+	
+	std::cout << this->target << " has been pardoned by Zaphod Beedlebrox" << std::endl;
 }

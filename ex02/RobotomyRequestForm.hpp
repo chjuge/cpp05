@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:38:45 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/23 12:40:09 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 12:18:37 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
+#include <thread>         // std::this_thread::sleep_for
+#include <chrono>         // std::chrono::seconds
 
 class RobotomyRequestForm : public Form
 {
@@ -25,11 +27,9 @@ public:
 	RobotomyRequestForm(RobotomyRequestForm const & src);
 	~RobotomyRequestForm();
 
+	void execute(const Bureaucrat &executor) const;
+
 	RobotomyRequestForm & operator =(RobotomyRequestForm const & src);
 };
-
-std::ostream & operator <<(std::ostream & stream, RobotomyRequestForm const & src);
-
-
 
 #endif

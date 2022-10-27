@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:48:13 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/22 19:13:14 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:49:11 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ public:
 	void decrementGrade();
 
 	void signForm(Form & form);
+	void executeForm(Form const & form) const;
 
 	class GradeTooHighException : public std::exception
 	{

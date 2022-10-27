@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 15:18:07 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/22 19:16:40 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:47:53 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,12 @@ const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("This grade is too low");
 }
+
+const char* Form::FormUnsiged::what() const throw()
+{
+	return ("This form is unsigned");
+}
+
 
 void Form::checkGrade(int grade) const
 {

@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:42:31 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/23 12:43:56 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 12:18:05 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ class ShrubberyCreationForm : public Form
 {
 private:
 	std::string const target;
+	void createShrubbery(std::fstream &file) const;
 public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(std::string & target);
 	ShrubberyCreationForm(ShrubberyCreationForm const & src);
 	~ShrubberyCreationForm();
 
+	void execute(const Bureaucrat &executor) const;
+
 	ShrubberyCreationForm & operator =(ShrubberyCreationForm const & src);
 };
-
-std::ostream & operator <<(std::ostream & stream, ShrubberyCreationForm const & src);
-
 
 #endif

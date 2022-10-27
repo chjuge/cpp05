@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:49:45 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/22 19:19:32 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:51:21 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,11 @@ void Bureaucrat::signForm(Form & form)
 		std::cout << this->name << " signed form " << form.getName() << std::endl;
 	else
 		std::cout << this->name << " couldn't sign form " << form.getName() << " because his grade isn't adequate" << std::endl;
+}
+
+
+void Bureaucrat::executeForm(Form const & form) const
+{
+	form.execute(*this);
+	std::cout << this->name << " executed " << form.getName();
 }
