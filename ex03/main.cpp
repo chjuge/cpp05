@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:56:44 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/27 12:40:19 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:08:09 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,79 +15,45 @@
 #include "ShrubberyCreationForm.hpp" 
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
+
+
+void	addspace()
+{
+	std::cout << std::endl;
+}
+
 
 int main(void)
 {
-	Form			*form = NULL;
-	Bureaucrat		bob("bob", 1);
-	Bureaucrat		phil("phil", 40);
-	Bureaucrat		luc("luc", 150);
-	std::string		a28 = "28A";
-	std::string		b28 = "28B";
-	std::string		c28 = "28C";
-	std::string		z28 = "28Z";
 
-	try
-	{
-		form = new PresidentialPardonForm(z28);
-		form->execute(bob);
+	addspace();
+	addspace();
+	Intern		intern;
+	Bureaucrat	joel("Joel", 3);
+	Form		*form;
+
+
+	addspace();
+	addspace();
+	form = intern.makeForm("this one doesn't exist", "Justin");
+	if (form)
 		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	try
-	{
-		form = new PresidentialPardonForm();
-		form->beSigned(bob);
-		form->execute(bob);
+	addspace();
+	addspace();
+	form = intern.makeForm(PRESPA, "Maynard");
+	if (form)
 		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-
-	try
-	{
-		form = new RobotomyRequestForm(b28);
-		form->beSigned(bob);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
-		form->execute(phil);
+	addspace();
+	addspace();
+	form = intern.makeForm(SHRUBB, "Danny");
+	if (form)
 		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-
-	try
-	{
-		form = new ShrubberyCreationForm(c28);
-		form->beSigned(bob);
-		form->execute(phil);
-		form->execute(luc);
+	addspace();
+	addspace();
+	form = intern.makeForm(ROBREQ, "Adam");
+	form->beSigned(joel);
+	form->execute(joel);
+	if (form)
 		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	return 0;
 }

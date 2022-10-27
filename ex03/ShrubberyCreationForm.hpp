@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:42:31 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/27 12:18:05 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:03:33 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	void createShrubbery(std::fstream &file) const;
 public:
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(std::string & target);
+	ShrubberyCreationForm(std::string const & target);
 	ShrubberyCreationForm(ShrubberyCreationForm const & src);
 	~ShrubberyCreationForm();
 

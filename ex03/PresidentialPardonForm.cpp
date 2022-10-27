@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:37:15 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/27 12:31:54 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:01:30 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & sr
 	std::cout << "Copy constructor [PresidentialPardonForm] " << this->getName() << std::endl;	
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string & target) : Form("Presidential Pardon Form", 25, 5), target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string const & target) : Form("Presidential Pardon Form", 25, 5), target(target)
 {
 	std::cout << "Constructor [PresidentialPardonForm] " << this->getName() << std::endl;
 }

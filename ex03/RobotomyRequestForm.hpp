@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:38:45 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/27 12:18:37 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:03:52 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	std::string const target;
 public:
 	RobotomyRequestForm();
-	RobotomyRequestForm(std::string & target);
+	RobotomyRequestForm(std::string const & target);
 	RobotomyRequestForm(RobotomyRequestForm const & src);
 	~RobotomyRequestForm();
 

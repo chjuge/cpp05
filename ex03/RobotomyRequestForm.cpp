@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:40:22 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/27 12:36:25 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:04:00 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src)
 	std::cout << "Copy constructor [RobotomyRequestForm] " << this->getName() << std::endl;	
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string & target) : Form("Robotomy Request Form", 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string const & target) : Form("Robotomy Request Form", 72, 45), target(target)
 {
 	std::cout << "Constructor [RobotomyRequestForm] " << this->getName() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mproveme <mproveme@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:32:09 by mproveme          #+#    #+#             */
-/*   Updated: 2022/10/27 12:22:23 by mproveme         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:01:11 by mproveme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 	std::string const target;
 public:
 	PresidentialPardonForm();
-	PresidentialPardonForm(std::string & target);
+	PresidentialPardonForm(std::string const & target);
 	PresidentialPardonForm(PresidentialPardonForm const & src);
 	~PresidentialPardonForm();
 
